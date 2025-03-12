@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Ablakat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="password-overlay">
+        <div class="password-box">
+            <h2>Enter the Password</h2>
+            <input type="password" id="password-input" placeholder="Password">
+            <button onclick="checkPassword()">Submit</button>
+        </div>
+    </div>
+
+    <div class="countdown-page">
+        <h1>Countdowns</h1>
+        <div class="countdowns">
+            <div class="countdown">
+                <h2>Countdown to Your Birthday</h2>
+                <div id="birthday-countdown"></div>
+                <button id="birthday-button" onclick="goToNextPage('birthday')">Celebrate Your Birthday 🎉</button>
+            </div>
+            <div class="countdown">
+                <h2>Countdown to Our Anniversary</h2>
+                <div id="anniversary-countdown"></div>
+                <button id="anniversary-button" onclick="goToNextPage('anniversary')">Celebrate Our Anniversary 💖</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="next-page" id="birthday-page">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Happy Birthday, Ablakat! 🎂</h1>
+        <p>This is your special day! Let’s celebrate together.</p>
+        <div class="buttons">
+            <button id="wish-message-button" onclick="showWishMessage()">Wish Message 💌</button>
+            <button onclick="showFirstKiss()">Our First Kiss 💋</button>
+            <button onclick="showFavoriteSongs()">Our Favorite Song 🎶</button>
+            <button onclick="showPhotoGallery()">Our Chat History 💬</button>
+            <button onclick="showQuiz()">Our Love Quiz 💖</button>
+        </div>
+    </div>
+
+    <div class="next-page" id="wish-message-page">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Your Birthday Wish 💌</h1>
+        <div class="envelope-container" onclick="openEnvelope()">
+            <div class="envelope"></div>
+            <div class="envelope-flap"></div>
+            <div class="letter" id="letter-content">
+                Happy Birthday, My Love! 🎂
+                <div class="inner-confetti" id="inner-confetti-container"></div>
+            </div>
+        </div>
+        <div id="wish-text" style="display: none;">
+            <p>Dear Ablakat,</p>
+            <p>On your special day, I want you to know how much you mean to me. You are the light of my life, and every moment with you feels like a dream come true. I wish you all the happiness, love, and success in the world. Happy Birthday, my love! 🌸</p>
+            <p>Forever Yours,<br>[Your Name]</p>
+        </div>
+    </div>
+
+    <div class="next-page" id="first-kiss-page">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Our First Kiss 💋</h1>
+        <div class="memory-text">
+            <p>It was a magical moment under the stars. The world seemed to stand still as our lips met for the first time. I’ll never forget the way my heart raced and how everything felt perfect in that moment. 💖</p>
+        </div>
+        <div class="kiss-images">
+            <img src="image1.jpg" alt="First Kiss 1">
+            <img src="image2.jpg" alt="First Kiss 2">
+            <img src="image3.jpg" alt="First Kiss 3">
+            <img src="image4.jpg" alt="First Kiss 4">
+            <img src="image5.jpg" alt="First Kiss 5">
+        </div>
+    </div>
+
+    <div class="next-page" id="favorite-songs-page">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Our Favorite Songs 🎶</h1>
+        <div class="songs-list">
+            <div class="song">
+                <p>1.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4cTUlTRD3cEj6eLRBRB2GO?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song">
+                <p>2.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0jnxvUYE26UKRiVtQwnP6M?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song">
+                <p>3.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4aOKk2Rzo5QfjKt1ywgvQx?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song">
+                <p>4.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4zPUWyOzzZQjPu61p4GRQE?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song">
+                <p>5.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2PX26OJHMsUS9SEMSKyXbJ?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song">
+                <p>6.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7FUURUGOJI8iJfvfcmpjVf?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="song">
+                <p>7.</p>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1m4GuPaivDMy6MuR41ZMr7?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="next-page" id="photo-gallery-page">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Our Chat History 💬</h1>
+        <div class="slider-container">
+            <div class="slider">
+                <img src="image1.jpg" alt="Chat 1">
+                <img src="image2.jpg" alt="Chat 2">
+                <img src="image3.jpg" alt="Chat 3">
+                <img src="image4.jpg" alt="Chat 4">
+                <img src="image5.jpg" alt="Chat 5">
+                <img src="chat6.jpg" alt="Chat 6">
+                <img src="chat7.jpg" alt="Chat 7">
+                <img src="chat8.jpg" alt="Chat 8">
+                <img src="chat9.jpg" alt="Chat 9">
+                <img src="chat10.jpg" alt="Chat 10">
+            </div>
+            <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+            <button class="slider-btn next" onclick="nextSlide()">❯</button>
+        </div>
+    </div>
+
+    <div class="next-page" id="quiz-page">
+        <button class="back-button" onclick="goBack()">Back</button>
+        <h1>Our Love Quiz 💖</h1>
+        <div class="quiz-container">
+            <div class="question" id="question1">
+                <p>1. Where was our first date?</p>
+                <input type="text" id="answer1">
+                <button onclick="checkAnswer(1)">Submit</button>
+                <p id="result1"></p>
+            </div>
+            <div class="question" id="question2">
+                <p>2. What is my favorite food?</p>
+                <input type="text" id="answer2">
+                <button onclick="checkAnswer(2)">Submit</button>
+                <p id="result2"></p>
+            </div>
+            <div class="question" id="question3">
+                <p>3. What is my favorite color?</p>
+                <input type="text" id="answer3">
+                <button onclick="checkAnswer(3)">Submit</button>
+                <p id="result3"></p>
+            </div>
+            <div class="question" id="question4">
+                <p>4. What is my favorite movie?</p>
+                <input type="text" id="answer4">
+                <button onclick="checkAnswer(4)">Submit</button>
+                <p id="result4"></p>
+            </div>
+            <div class="question" id="question5">
+                <p>5. What is our favorite place to go?</p>
+                <input type="text" id="answer5">
+                <button onclick="checkAnswer(5)">Submit</button>
+                <p id="result5"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti" id="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
